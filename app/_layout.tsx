@@ -18,8 +18,8 @@ export default function RootLayout() {
         <Image source={Images.Logo} className='h-[113px] w-[134px]' />
 
         <View className='w-full flex flex-col'>
-          <Text className='w-full text-royal-blue text-[20px] font-rubik-semibold uppercase text-center'>Real Scout</Text>
-          <Text className='w-full text-graphite-gray text-[12px] font-rubik-medium uppercase text-center'>Connecting You to Your Ideal Home</Text>
+          <Text className='w-full text-royal-blue text-[20px] font-rubik-semibold font-semibold uppercase text-center'>Real Scout</Text>
+          <Text className='w-full text-graphite-gray text-[12px] font-rubik-medium font-medium uppercase text-center'>Connecting You to Your Ideal Home</Text>
         </View>
       </View>
     );
@@ -31,6 +31,7 @@ export default function RootLayout() {
 
       <Stack>
         <Stack.Screen name='index' options={{ headerShown: false }} />
+        <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
       </Stack>
     </>
   );
