@@ -11,4 +11,15 @@ export const Icons = {
     HeartIcon: require('@/assets/icons/heart-icon.png'),
     HeartFilledIcon: require('@/assets/icons/heart-filled-icon.png'),
     StarIcon: require('@/assets/icons/star-icon.png'),
+    FilterIcon: require('@/assets/icons/filter-icon.png'),
+
+    BookingIcon: require('@/assets/icons/booking-icon.png'),
+    PaymentsIcon: require('@/assets/icons/payments-icon.png'),
+    EditIcon: require('@/assets/icons/edit-icon.png'),
+    ChevronRightIcon: require('@/assets/icons/chevron-right-icon.png'),
+    SecurityIcon: require('@/assets/icons/security-icon.png'),
+    LanguageIcon: require('@/assets/icons/language-icon.png'),
+    HelpCenterIcon: require('@/assets/icons/help-center-icon.png'),
+    InviteFriendsIcon: require('@/assets/icons/invite-friends-icon.png'),
+    LogoutIcon: require('@/assets/icons/logout-icon.png'),
 };

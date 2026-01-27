@@ -9,12 +9,14 @@ module.exports = {
         'royal-blue': '#0061FF',
         'royal-blue-soft': '#0061FF1A',
         'royal-blue-fade': '#0061FF0D',
+        'cloud-white': '#FBFBFD',
 
         // Text-Colors
         'ink-night': '#191D31',
         'graphite-gray': '#666876',
         'ash-silver': '#8C8E98',
         'pure-light': '#FFFFFF',
+        'crimson-alert': '#F75555',
       },
       fontFamily: {
         'rubik-regular': ['Rubik-Regular'],
