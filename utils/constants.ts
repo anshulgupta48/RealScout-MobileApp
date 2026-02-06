@@ -1,3 +1,4 @@
+import { Icons } from './icons';
 import { Images } from './images';
 
 // <======== Exporting Constants ========>
@@ -103,4 +104,15 @@ export const recommendedListingsData = [
         price: 12219,
         rating: 4.8,
     },
+];
+
+export const facilitiesData = [
+    { title: 'Car Parking', icon: Icons.CarParkingIcon },
+    { title: 'Swimming Pool', icon: Icons.SwimmingIcon },
+    { title: 'Gym & Fitness', icon: Icons.GymIcon },
+    { title: 'Restaurant', icon: Icons.RestaurantIcon },
+    { title: 'Wifi', icon: Icons.WifiIcon },
+    { title: 'Pet Center', icon: Icons.PetIcon },
+    { title: 'Sport Center', icon: Icons.SportsIcon },
+    { title: 'Laundry', icon: Icons.LaundryIcon },
 ];

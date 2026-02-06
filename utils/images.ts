@@ -8,4 +8,5 @@ export const Images = {
     ListingBanner2: require('@/assets/images/listing-banner-2.png'),
     ListingBanner3: require('@/assets/images/listing-banner-3.png'),
     ListingBanner4: require('@/assets/images/listing-banner-4.png'),
+    ListingOwnerBanner: require('@/assets/images/listing-owner-banner.png'),
 };

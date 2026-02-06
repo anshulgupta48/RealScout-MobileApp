@@ -22,4 +22,21 @@ export const Icons = {
     HelpCenterIcon: require('@/assets/icons/help-center-icon.png'),
     InviteFriendsIcon: require('@/assets/icons/invite-friends-icon.png'),
     LogoutIcon: require('@/assets/icons/logout-icon.png'),
+
+    ArrowLeftIcon: require('@/assets/icons/arrow-left-icon.png'),
+    ShareIcon: require('@/assets/icons/share-icon.png'),
+    BedsIcon: require('@/assets/icons/beds-icon.png'),
+    BathIcon: require('@/assets/icons/bath-icon.png'),
+    AreaIcon: require('@/assets/icons/area-icon.png'),
+
+    CarParkingIcon: require('@/assets/icons/car-parking-icon.png'),
+    SwimmingIcon: require('@/assets/icons/swimming-icon.png'),
+    GymIcon: require('@/assets/icons/gym-icon.png'),
+    RestaurantIcon: require('@/assets/icons/restaurant-icon.png'),
+    WifiIcon: require('@/assets/icons/wifi-icon.png'),
+    PetIcon: require('@/assets/icons/pet-icon.png'),
+    SportsIcon: require('@/assets/icons/sports-icon.png'),
+    LaundryIcon: require('@/assets/icons/laundry-icon.png'),
+    ChatIconBlue: require('@/assets/icons/chat-icon-blue.png'),
+    PhoneIconBlue: require('@/assets/icons/phone-icon-blue.png'),
 };
