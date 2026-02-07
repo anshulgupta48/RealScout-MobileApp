@@ -1,3 +1,4 @@
+import { GlobalProvider } from '@/services/globalProvider';
 import { Images } from '@/utils/images';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
@@ -29,11 +30,13 @@ export default function RootLayout() {
     <>
       <StatusBar barStyle='light-content' />
 
-      <Stack>
-        <Stack.Screen name='index' options={{ headerShown: false }} />
-        <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-        <Stack.Screen name='properties/[propertyId]' options={{ headerShown: false }} />
-      </Stack>
+      <GlobalProvider>
+        <Stack>
+          <Stack.Screen name='index' options={{ headerShown: false }} />
+          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+          <Stack.Screen name='properties/[propertyId]' options={{ headerShown: false }} />
+        </Stack>
+      </GlobalProvider>
     </>
   );
 };

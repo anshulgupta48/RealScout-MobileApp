@@ -1,11 +1,25 @@
+import { handleUserLogout } from '@/services/appwrite';
 import { Icons } from '@/utils/icons';
 import { Images } from '@/utils/images';
-import { Link } from 'expo-router';
+import { useRouter } from 'expo-router';
 import React from 'react';
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Profile = () => {
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      const response = await handleUserLogout();
+      if (response?.isSuccess) {
+        router.push('/');
+      }
+    } catch (error) {
+      console.error('Error while doing Logout', error);
+    }
+  };
+
   return (
     <SafeAreaView className='h-full w-full bg-pure-light'>
       <ScrollView className='h-full w-full'>
@@ -99,12 +113,10 @@ const Profile = () => {
               <Image source={Icons.ChevronRightIcon} tintColor='#191D31' className='h-[20px] w-[20px]' />
             </View>
 
-            <Link href='/'>
-              <View className='w-full flex flex-row items-center gap-[6px]'>
-                <Image source={Icons.LogoutIcon} tintColor='#F75555' className='h-[20px] w-[20px]' />
-                <Text className='text-crimson-alert text-[16px] font-rubik-medium'>Logout</Text>
-              </View>
-            </Link>
+            <TouchableOpacity activeOpacity={0.8} className='w-full flex flex-row items-center gap-[6px]' onPress={handleLogout}>
+              <Image source={Icons.LogoutIcon} tintColor='#F75555' className='h-[20px] w-[20px]' />
+              <Text className='text-crimson-alert text-[16px] font-rubik-medium'>Logout</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

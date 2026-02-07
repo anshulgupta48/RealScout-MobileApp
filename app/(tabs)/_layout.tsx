@@ -1,9 +1,19 @@
 import TabsBarIcon from '@/components/TabsBarIcon';
+import { useGlobalContext } from '@/services/globalProvider';
 import { Icons } from '@/utils/icons';
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import React from 'react';
 
 const TabsLayout = () => {
+  const { isLoggedIn, loading } = useGlobalContext();
+  console.log(isLoggedIn, loading);
+
+  if (!loading && !isLoggedIn) {
+    return (
+      <Redirect href='/' />
+    );
+  };
+
   return (
     <Tabs screenOptions={{
       tabBarShowLabel: false,

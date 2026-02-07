@@ -1,13 +1,40 @@
+import { handleUserLogin } from '@/services/appwrite';
+import { useGlobalContext } from '@/services/globalProvider';
 import { Icons } from '@/utils/icons';
 import { Images } from '@/utils/images';
-import { Link } from 'expo-router';
+import { Redirect, useRouter } from 'expo-router';
 import React from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Login = () => {
+  const router = useRouter();
+  const { isLoggedIn, loading } = useGlobalContext();
+  console.log(isLoggedIn, loading);
+
+  const handleLogin = async () => {
+    try {
+      const response = await handleUserLogin();
+      if (response?.isSuccess) {
+        router.push('/(tabs)/Home');
+      }
+    } catch (error) {
+      console.error('Error while doing Login', error);
+    }
+  };
+
+  if (!loading && isLoggedIn) {
+    return (
+      <Redirect href='/(tabs)/Home' />
+    );
+  };
+
   return (
     <SafeAreaView className='h-full w-full bg-pure-light'>
+      {loading && <View className='absolute left-0 top-0 h-screen w-full bg-black/40 z-10 flex justify-center items-center'>
+        <ActivityIndicator color='#FFFFFF' size='large' />
+      </View>}
+
       <View className='h-full w-full px-[16px] pt-[20px] flex flex-col justify-between'>
         <View className='h-[500px] w-full'>
           <Image source={Images.LoginBanner} className='h-full w-full' />
@@ -23,12 +50,10 @@ const Login = () => {
             </View>
           </View>
 
-          <Link href='/(tabs)/Home' asChild>
-            <TouchableOpacity activeOpacity={0.8} className='h-[48px] w-full bg-royal-blue-fade border border-solid border-royal-blue-soft rounded-[5px] flex flex-row justify-center items-center gap-[10px]'>
-              <Image source={Icons.GoogleIcon} className='h-[20px] w-[20px]' />
-              <Text className='text-ink-night text-[16px] font-rubik-medium'>Sign Up with Google</Text>
-            </TouchableOpacity>
-          </Link>
+          <TouchableOpacity activeOpacity={0.8} className='h-[48px] w-full bg-royal-blue-fade border border-solid border-royal-blue-soft rounded-[5px] flex flex-row justify-center items-center gap-[10px]' onPress={handleLogin}>
+            <Image source={Icons.GoogleIcon} className='h-[20px] w-[20px]' />
+            <Text className='text-ink-night text-[16px] font-rubik-medium'>Sign Up with Google</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>

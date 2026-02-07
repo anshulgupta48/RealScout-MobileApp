@@ -1,6 +1,12 @@
 import { ImageSourcePropType } from 'react-native';
 
 // <======== Exporting Interfaces ========>
+export interface GlobalContextType {
+    isLoggedIn: boolean;
+    userData: { name: string, avatar: string } | null;
+    loading: boolean;
+};
+
 export interface TabsBarIconProps {
     focused: boolean,
     title: string,
