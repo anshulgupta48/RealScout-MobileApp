@@ -6,7 +6,6 @@ import React from 'react';
 
 const TabsLayout = () => {
   const { isLoggedIn, loading } = useGlobalContext();
-  console.log(isLoggedIn, loading);
 
   if (!loading && !isLoggedIn) {
     return (

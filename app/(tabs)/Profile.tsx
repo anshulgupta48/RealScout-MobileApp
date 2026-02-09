@@ -1,4 +1,5 @@
 import { handleUserLogout } from '@/services/appwrite';
+import { useGlobalContext } from '@/services/globalProvider';
 import { Icons } from '@/utils/icons';
 import { Images } from '@/utils/images';
 import { useRouter } from 'expo-router';
@@ -8,11 +9,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Profile = () => {
   const router = useRouter();
+  const { reFetch } = useGlobalContext();
 
   const handleLogout = async () => {
     try {
       const response = await handleUserLogout();
       if (response?.isSuccess) {
+        reFetch?.();
         router.push('/');
       }
     } catch (error) {

@@ -5,6 +5,7 @@ export interface GlobalContextType {
     isLoggedIn: boolean;
     userData: { name: string, avatar: string } | null;
     loading: boolean;
+    reFetch?: () => void;
 };
 
 export interface TabsBarIconProps {

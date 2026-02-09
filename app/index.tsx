@@ -9,13 +9,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Login = () => {
   const router = useRouter();
-  const { isLoggedIn, loading } = useGlobalContext();
-  console.log(isLoggedIn, loading);
+  const { isLoggedIn, loading, reFetch } = useGlobalContext();
 
   const handleLogin = async () => {
     try {
       const response = await handleUserLogin();
       if (response?.isSuccess) {
+        reFetch?.();
         router.push('/(tabs)/Home');
       }
     } catch (error) {

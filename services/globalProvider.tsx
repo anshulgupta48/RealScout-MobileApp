@@ -6,11 +6,11 @@ import useFetch from './useFetch';
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
-    const { data, loading } = useFetch(handleFetchUser);
+    const { data, loading, reFetch } = useFetch(handleFetchUser);
     const isLoggedIn = data?.userData ? true : false;
 
     return (
-        <GlobalContext.Provider value={{ isLoggedIn, userData: data?.userData!, loading }}>
+        <GlobalContext.Provider value={{ isLoggedIn, userData: data?.userData!, loading, reFetch }}>
             {children}
         </GlobalContext.Provider>
     )
